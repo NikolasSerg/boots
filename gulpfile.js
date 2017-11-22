@@ -9,6 +9,12 @@ var gulp            = require('gulp'),
     rename          =require('gulp-rename'),
     cssnano         =require('gulp-cssnano');
 
+gulp.task('server', function () {
+    browserSync.init({
+        server: 'app'
+    });
+});
+
 gulp.task('sass', function () {             /*ПРАЦЮЄ*/
     return gulp.src('app/sass/*.scss')
         .pipe(sourcemaps.init())
@@ -19,6 +25,7 @@ gulp.task('sass', function () {             /*ПРАЦЮЄ*/
         }))
         .pipe(sourcemaps.write("."))
         .pipe(gulp.dest('app/css'))
+        .pipe(gulp.watch("app/sass/**/*.sass", browserSync.reload));
 });
 
 gulp.task('script', function (){            /*ПРАЦЮЄ*/
@@ -34,13 +41,18 @@ gulp.task('script', function (){            /*ПРАЦЮЄ*/
         .pipe(gulp.dest("app/js"));
 });
 
-gulp.task('browser-sync', function () {
-   browserSync.init({
-       server: 'app'
-   });
-    gulp.watch(['app/sass/*.scss', 'app/*.html'],[sass]).on('change', browserSync.reload);
+gulp.task('servers', function () {
+    browserSync.init({
+        server: 'app'
+    });
 });
 
-gulp.task('default', ['sass', 'browser-sync']);
+gulp.task('watcher', ['sass', 'script', 'servers'], function () {
+    gulp.watch("app/**/*.html", browserSync.reload);
+    gulp.watch("app/sass/**/*.sass", ['sass']);
+    gulp.watch("app/js/**/*.js", browserSync.reload);
 
+});
+
+//gulp.task('default', ['sass', 'scripts', 'servers']);
 

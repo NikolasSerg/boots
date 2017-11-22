@@ -1,0 +1,1 @@
+{"version":3,"sources":["customs/my.scss"],"names":[],"mappings":"AAAA,KACE,yBAAyB,AACzB,cAAc,AACd,eAAgB,CACjB","file":"style-min.css","sourcesContent":[".puh {\n  background-color: #705aff;\n  color: #bc112d;\n  font-size: 125px;\n}"]}
