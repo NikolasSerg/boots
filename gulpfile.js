@@ -7,7 +7,8 @@ var gulp            = require('gulp'),
     sourcemaps       = require('gulp-sourcemaps'),
     clean           =require('gulp-clean'),
     rename          =require('gulp-rename'),
-    cssnano         =require('gulp-cssnano');
+    cssnano         =require('gulp-cssnano'),
+    autoprefixer    =require('gulp-autoprefixer');
 
 gulp.task('server', function () {
     browserSync.init({
@@ -19,13 +20,14 @@ gulp.task('sass', function () {             /*ПРАЦЮЄ*/
     return gulp.src('app/sass/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass())
+        .pipe(autoprefixer())
         .pipe(cssnano())
         .pipe(rename({
             suffix:"-min"
         }))
         .pipe(sourcemaps.write("."))
         .pipe(gulp.dest('app/css'))
-        .pipe(gulp.watch("app/sass/**/*.sass", browserSync.reload));
+        .pipe(browserSync.stream());
 });
 
 gulp.task('script', function (){            /*ПРАЦЮЄ*/
@@ -38,7 +40,8 @@ gulp.task('script', function (){            /*ПРАЦЮЄ*/
              suffix: "-min"
          }))
         //.pipe(sourcemaps.write("."))
-        .pipe(gulp.dest("app/js"));
+        .pipe(gulp.dest("app/js"))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('servers', function () {
@@ -49,8 +52,8 @@ gulp.task('servers', function () {
 
 gulp.task('watcher', ['sass', 'script', 'servers'], function () {
     gulp.watch("app/**/*.html", browserSync.reload);
-    gulp.watch("app/sass/**/*.sass", ['sass']);
-    gulp.watch("app/js/**/*.js", browserSync.reload);
+    gulp.watch("app/sass/**/*.scss", ['sass']);
+    gulp.watch("app/js/**/*.js", ['script']);
 
 });
 
