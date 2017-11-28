@@ -1,0 +1,19 @@
+header {
+  background: url("../../img/header_bg.jpg") no-repeat;
+  background-size: cover;
+  height: 600px;
+  color: #ffffff;
+  text-shadow: 2px -2px 2px rgb(0, 0, 0);
+}
+
+main .col-3 {
+  background-color: #8890ff;
+
+    &.col-6 {
+      background-color: #b7ff6b;
+    }
+}
+
+//main. col-6 + col-3 {
+//  background-color: #ffac92;
+//}
