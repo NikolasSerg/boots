@@ -17,7 +17,7 @@ gulp.task('server', function () {
 });
 
 gulp.task('sass', function () {             /*ПРАЦЮЄ*/
-    return gulp.src('app/sass/*.scss')
+    return gulp.src('app/sass/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(autoprefixer())

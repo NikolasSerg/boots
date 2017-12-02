@@ -4,14 +4,16 @@ header {
   height: 700px;
   color: #ffffff;
   font-family: robotomedium;
+  margin-bottom: 3rem;
+  h1 {
+    text-shadow: 2px 2px 4px #000000;
+  }
 
+  .lead {
+    text-shadow: 1px 1px 2px #000000;
+  }
 
 }
 
-h1 {
-  text-shadow: 2px 2px 4px #000000;
-}
 
-.lead {
-  text-shadow: 1px 1px 2px #000000;
-}
+
