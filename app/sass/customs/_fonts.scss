@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'robotomedium';
+  font-family: 'roboto-medium';
   src: url('../../fonts/roboto/roboto-medium-webfont.eot');
   src: url('../../fonts/roboto/roboto-medium-webfont.eot?#iefix') format('embedded-opentype'),
   url('../../fonts/roboto/roboto-medium-webfont.woff2') format('woff2'),
@@ -7,5 +7,28 @@
   url('../../fonts/roboto/roboto-medium-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
 
+@font-face {
+  font-family: 'Yokawerad';
+  src: url('../../fonts/yokawerad/yokawerad-webfont.eot');
+  src: url('../../fonts/yokawerad/yokawerad-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../../fonts/yokawerad/yokawerad-webfont.woff2') format('woff2'),
+  url('../../fonts/yokawerad/yokawerad-webfont.woff') format('woff'),
+  url('../../fonts/yokawerad/yokawerad-webfont.ttf') format('truetype'),
+  url('../../fonts/yokawerad/yokawerad-webfont.svg#yokaweradregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Philosopher';
+  src: url('../../fonts/philosopher/philosopher-bold-webfont.eot');
+  src: url('../../fonts/philosopher/philosopher-bold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../../fonts/philosopher/philosopher-bold-webfont.woff2') format('woff2'),
+  url('../../fonts/philosopher/philosopher-bold-webfont.woff') format('woff'),
+  url('../../fonts/philosopher/philosopher-bold-webfont.ttf') format('truetype'),
+  url('../../fonts/philosopher/philosopher-bold-webfont.svg#philosopherbold') format('svg');
+  font-weight: bold;
+  font-style: normal;
 }

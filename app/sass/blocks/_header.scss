@@ -1,9 +1,13 @@
+.logo img{
+  margin-top: -15px;
+}
+
 header {
   background: url("../../img/header_bg.jpg") no-repeat;
   background-size: cover;
   height: 700px;
   color: #ffffff;
-  font-family: robotomedium;
+  //font-family: yokawerad-regular;
   margin-bottom: 3rem;
   h1 {
     text-shadow: 2px 2px 4px #000000;
@@ -12,7 +16,6 @@ header {
   .lead {
     text-shadow: 1px 1px 2px #000000;
   }
-
 }
 
 
