@@ -1,0 +1,21 @@
+{
+  "name": "boots",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Sergiu <Nikolas.ser.a@yandex.ru>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/NikolasSerg/boots",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^3.2.1",
+    "popper.js": "^1.12.9"
+  }
+}

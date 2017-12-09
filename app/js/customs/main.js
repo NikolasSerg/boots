@@ -1,7 +1,9 @@
-//= ../../../node_modules/popper.js/dist/umd/popper.js
-//= ../../../node_modules/jquery/dist/jquery.js
-//= ../../../node_modules/bootstrap/js/dist/util.js
-//= ../../../node_modules/bootstrap/js/dist/tooltip.js
-//= ../../../node_modules/bootstrap/js/dist/carousel.js
+//=../../components/jquery/dist/jquery
+//=../../components/popper.js/dist/umd/popper
 
-//= tooltips.js
+//= ../../../node_modules/bootstrap/js/dist/util
+//= ../../../node_modules/bootstrap/js/dist/tooltip
+//= ../../../node_modules/bootstrap/js/dist/button
+//= ../../../node_modules/bootstrap/js/dist/dropdown
+//= ../../../node_modules/bootstrap/js/dist/carousel
+
