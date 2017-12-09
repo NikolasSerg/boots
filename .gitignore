@@ -5,6 +5,7 @@ node_modules/
 dist/
 app/components
 app/css/
+app/js/*.js
 package-lock.json
 
 
