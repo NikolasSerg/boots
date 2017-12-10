@@ -1,14 +1,28 @@
 .logo img{
   margin-top: -15px;
+  //width: 50px;
+  //height: 75px;
 }
 
-header {
-  margin:0 0 3rem;
-  font: 3rem cataneo, sans-serif;
- }
+header .navbar {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
 
-#carouselExampleIndicators .carousel {
-  margin-right: 0px;
-  margin-left: 0px;
 
+}
+
+.navP {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+#carouselExampleIndicators {
+  font-family: 'Lobster', cursive;
+  text-shadow: 3px 3px 6px #000000;
+}
+
+.p-0 {
+  padding-left: 0;
+  padding-right: 0;
+}
 
