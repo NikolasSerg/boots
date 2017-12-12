@@ -8,7 +8,8 @@ var gulp            = require('gulp'),
     clean           =require('gulp-clean'),
     rename          =require('gulp-rename'),
     cssnano         =require('gulp-cssnano'),
-    autoprefixer    =require('gulp-autoprefixer');
+    autoprefixer    =require('gulp-autoprefixer'),
+    del             =require('del');
 
 gulp.task('server', function () {
     browserSync.init({
@@ -57,5 +58,9 @@ gulp.task('watcher', ['sass', 'script', 'servers'], function () {
 
 });
 
-//gulp.task('default', ['sass', 'scripts', 'servers']);
+gulp.task('clean folders', function () {
+    return del.sync(['app/css/'])
+});
+
+gulp.task ('proba', ['clean folders', 'sass']);
 

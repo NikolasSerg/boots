@@ -1,28 +1,16 @@
-
-
-//UTILITIES
-
-
-
 @import "../../node_modules/bootstrap/scss/bootstrap-reboot.scss";
-@import "../../node_modules/bootstrap/scss/utilities.scss";
-@import "../../node_modules/bootstrap/scss/grid.scss";
-@import "../../node_modules/bootstrap/scss/utilities/position";
 
-@import "../../node_modules/bootstrap/scss/navbar.scss";
+
 @import "../../node_modules/bootstrap/scss/nav.scss";
-
+@import "../../node_modules/bootstrap/scss/navbar.scss";
 @import "../../node_modules/bootstrap/scss/buttons.scss";
 @import "../../node_modules/bootstrap/scss/forms.scss";
 @import "../../node_modules/bootstrap/scss/carousel.scss";
-
-//@import "../../node_modules/bootstrap/scss/tooltip.scss";
+@import "../../node_modules/bootstrap/scss/grid.scss";
 @import "../../node_modules/bootstrap/scss/type.scss";
-
 @import "../../node_modules/bootstrap/scss/dropdown.scss";
 
-
-
+@import "../../node_modules/bootstrap/scss/utilities.scss";
 
 @import "customs/fonts";
 @import "blocks/header";
@@ -30,6 +18,7 @@
 @import "blocks/block";
 @import "customs/variables";
 @import "blocks/body";
+
 
 
 
