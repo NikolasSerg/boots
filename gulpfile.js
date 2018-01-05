@@ -4,31 +4,40 @@ var gulp            = require('gulp'),
     concat          = require('gulp-concat'),
     uglify          = require('gulp-uglifyjs'),
     rigger          = require('gulp-rigger'),
-    sourcemaps       = require('gulp-sourcemaps'),
-    clean           =require('gulp-clean'),
-    rename          =require('gulp-rename'),
-    cssnano         =require('gulp-cssnano'),
-    autoprefixer    =require('gulp-autoprefixer'),
-    del             =require('del');
+    sourcemaps      = require('gulp-sourcemaps'),
+    clean           = require('gulp-clean'),
+    rename          = require('gulp-rename'),
+    cssnano         = require('gulp-cssnano'),
+    autoprefixer    = require('gulp-autoprefixer'),
+    del             = require('del'),
+    pug             = require('gulp-pug'),
+    //htmlb           = require('gulp-html-beautify')
+    notify          = require('gulp-notify');
 
-gulp.task('server', function () {
+gulp.task('servers', function () {
     browserSync.init({
         server: 'app'
     });
 });
 
-gulp.task('sass', function () {             /*ПРАЦЮЄ*/
-    return gulp.src('app/sass/**/*.scss')
+gulp.task('sass', function () {
+    return gulp.src('app/sass/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass())
-        .pipe(autoprefixer())
+        .pipe(autoprefixer({
+            browsers: ['last 10 versions']
+        }))
+        .on("error", notify.onError({
+            message: "Error: <%= error.message %>",
+            title: "Error running something"
+        }))
         .pipe(cssnano())
         .pipe(rename({
             suffix:"-min"
         }))
         .pipe(sourcemaps.write("."))
         .pipe(gulp.dest('app/css'))
-        .pipe(browserSync.stream());
+        .pipe(browserSync.stream())
 });
 
 gulp.task('script', function (){            /*ПРАЦЮЄ*/
@@ -45,14 +54,9 @@ gulp.task('script', function (){            /*ПРАЦЮЄ*/
         .pipe(browserSync.stream());
 });
 
-gulp.task('servers', function () {
-    browserSync.init({
-        server: 'app'
-    });
-});
 
 gulp.task('watcher', ['sass', 'script', 'servers'], function () {
-    gulp.watch("app/**/*.html", browserSync.reload);
+    gulp.watch("app/*.html", browserSync.reload);
     gulp.watch("app/sass/**/*.scss", ['sass']);
     gulp.watch("app/js/**/*.js", ['script']);
 
@@ -64,3 +68,14 @@ gulp.task('clean folders', function () {
 
 gulp.task ('proba', ['clean folders', 'sass']);
 
+
+gulp.task('pug', function() {
+    return gulp.src('app/pug/**/*.pug')
+        .pipe(pug())
+        .pipe(htmlb(
+             {indentSize: 2,
+                 formatted: ['a', 'img']
+             }
+         ))
+        .pipe(gulp.dest('dist/html'))
+});
